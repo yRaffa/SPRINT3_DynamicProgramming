@@ -1,6 +1,6 @@
 # **🌐 FIAP x DASA CHALLENGE 2025 - SPRINT 3**
 
-# 🐍 Dynamic Programing (2ESA)
+# 🐍 Dynamic Programing
 
 ## 👥 Integrantes
 
