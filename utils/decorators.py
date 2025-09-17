@@ -22,3 +22,12 @@ def medirMemoria(func):
         memoria = memoria[1] / 1024 # Converte o pico de memória para KB
         return {'resultado' : resultado, 'memoria' : memoria} # Retorna o resultado da função original
     return wrapper
+
+def executar(func, *args, **kwargs):
+    tempo = medirTempo(func)(*args, **kwargs)
+    memoria = medirMemoria(func)(*args, **kwargs)
+    return {
+        'resultado': tempo['resultado'],
+        'tempo': tempo['tempo'],
+        'memoria': memoria['memoria']
+    }
