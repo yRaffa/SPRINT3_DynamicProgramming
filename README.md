@@ -5,11 +5,11 @@
 ## 👥 Integrantes
 
 ```
-RM 557709 | Augusto Ferreira Rogel de Souza (2ESA)
-RM 554823 | Heitor Anderson Prestes de Oliveira Filho (2ESA)
-RM 556668 | Lucca Ribeiro Cardinale (2ESA)
-RM 554445 | Mohamed Afif (2ESA)
-RM 554736 | Rafael Federici de Oliveira (2ESPH)
+RM 557709 | Augusto Ferreira Rogel de Souza             (2ESA)
+RM 554823 | Heitor Anderson Prestes de Oliveira Filho   (2ESA)
+RM 556668 | Lucca Ribeiro Cardinale                     (2ESA)
+RM 554445 | Mohamed Afif                                (2ESA)
+RM 554736 | Rafael Federici de Oliveira                 (2ESPH)
 ```
 
 ## 📕 Sobre o Projeto
