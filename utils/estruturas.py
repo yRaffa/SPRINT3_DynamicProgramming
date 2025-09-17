@@ -1,5 +1,9 @@
 ### Imports ###
-from data.insumos import consumo_fila, consumo_pilha
+from collections import deque
+
+# Estruturas de Dados: Fila e Pilha
+consumo_fila = deque()
+consumo_pilha = []
 
 # Registrar consumo em Fila e Pilha
 def registrarConsumo(nome_insumo, quantidade):

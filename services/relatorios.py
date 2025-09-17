@@ -1,4 +1,7 @@
+from data.insumos import insumos
 from services.estoque import visualizarTabela
+from utils.estruturas import visualizarFila, visualizarPilha
+from utils.ordenacoes import mergeSort, quickSort
 
 # Função que reabastece quantidade de um item do dicionário
 def reabastecerEstoque(dic):
@@ -30,3 +33,18 @@ def reabastecerEstoque(dic):
     else:
         print('\n > Estoque Cheio!!!')
     return
+
+def relatorioFinal():
+    print("\n===== RELATÓRIO FINAL =====\n")
+
+    print("Estoque Atual:")
+    visualizarTabela(insumos)
+
+    visualizarFila()
+    visualizarPilha()
+
+    print("\nOrdenação por Quantidade (Merge Sort):")
+    print(mergeSort(insumos['Estoque'].copy()))
+
+    print("\nOrdenação por Quantidade (Quick Sort):")
+    print(quickSort(insumos['Estoque'].copy()))

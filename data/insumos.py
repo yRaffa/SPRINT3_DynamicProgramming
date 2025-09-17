@@ -1,5 +1,4 @@
 ### Imports ###
-from collections import deque
 from utils.inputs import inputInt, inputNum
 
 # Dicionário principal com os dados do estoque de insumos
@@ -21,6 +20,3 @@ tipos = {
     'Estoque_Ideal' : inputInt,
     'Custo_Unitario' : inputNum
 }
-
-consumo_fila = deque()
-consumo_pilha = []
