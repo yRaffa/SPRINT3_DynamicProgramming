@@ -79,32 +79,31 @@ O campo ``` 'ID' ``` é usado como chave primária para buscas e operações.
 
 ## ▶️ Como Executar
 
-- Execute o código em um terminal Python.
-- Um menu será exibido com as opções principais.
-- Digite o número da operação desejada.
-- Siga as instruções no terminal para preencher ou visualizar os dados.
-
-
-Clone o repositório:
+#### **Clone o repositório:**
 
 ``` bash
 git clone <repo_url>
 cd SPRINT3_DynamicProgramming
 ```
 
-Instale as dependências:
+#### **Instale as dependências:**
 
 ``` bash
 pip install -r requirements.txt
 ```
 
-Execute o sistema:
+#### **Execute o sistema:**
 
 ``` bash
 python gerenciamento_estoque.py
 ```
 
-Para visualizar relatório:
+Ao executar o código em um terminal Python:
+- Um menu será exibido com as opções principais.
+- Digite o número da operação desejada.
+- Siga as instruções no terminal para preencher ou visualizar os dados.
+
+#### **Para visualizar relatório:**
 
 ``` bash
 jupyter notebook relatorio.ipynb
