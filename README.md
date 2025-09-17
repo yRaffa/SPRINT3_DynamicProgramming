@@ -21,7 +21,7 @@ O sistema roda via terminal, utiliza estruturas de dados simples e aplica técni
 
 ## 📂 Estrutura do Projeto
 
-```
+``` bash
 SPRINT3_DynamicProgramming/
 │── data/                       # Conjunto de dados de entrada
 │── services/                   # Serviços auxiliares (módulos de lógica)
