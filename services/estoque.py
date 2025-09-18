@@ -1,10 +1,10 @@
 ### Imports ###
 import pandas as pd
-from data.insumos import tipos
+from data.insumos import *
 from utils.buscas import buscaBinaria
 from utils.estruturas import registrarConsumo
 from utils.inputs import *
-from utils.ordenacoes import selectionSort
+from utils.ordenacoes import *
 
 # Função que exibe o dicionário em formato de tabela usando o pandas
 def visualizarTabela(dic):

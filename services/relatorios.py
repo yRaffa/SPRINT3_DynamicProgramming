@@ -1,6 +1,6 @@
 ### Imports ###
 from services.estoque import visualizarTabela, listarQuantidade
-from data.insumos import insumos
+from data.insumos import *
 from utils.estruturas import visualizarFila, visualizarPilha
 from utils.ordenacoes import *
 

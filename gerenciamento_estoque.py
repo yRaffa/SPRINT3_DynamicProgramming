@@ -1,5 +1,5 @@
 ### Imports ###
-from data.insumos import insumos
+from data.insumos import *
 from services.estoque import *
 from services.relatorios import *
 from utils.estruturas import *
@@ -9,7 +9,7 @@ from utils.inputs import inputOpcoes
 opcoes_menu = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 while True: # Laço principal do sistema com menu de navegação
-    print('======================================================'
+    print('\n======================================================'
           '\nGERENCIAMENTO DE ESTOQUE \n\n'
           '1 - VISUALIZAR estoque de insumos \n'
           '2 - CONSULTAR dados de insumo no estoque \n\n'
@@ -33,7 +33,7 @@ while True: # Laço principal do sistema com menu de navegação
     match opcao:
         case '1': # Execução da função visualizar tabela
             visualizarTabela(insumos)
-            input('\nPressione qualquer tecla para voltar... ')
+            input('\nTabela EXIBIDA!!!\nPressione qualquer tecla para voltar... ')
         case '2': # Execução da função consultar
             consultar(insumos, 'ID')
             input('\nDados CONSULTADOS!!!\nPressione qualquer tecla para voltar... ')
@@ -48,16 +48,16 @@ while True: # Laço principal do sistema com menu de navegação
             input('\nDados ATUALIZADOS!!!\nPressione qualquer tecla para voltar... ')
         case '6': # Execução da função adicionar quantidade
             adicionarQuantidade(insumos, 'ID')
-            input('\nQUANTIDADE ADICIONADA ao estoque!!!\nPressione qualquer tecla para voltar... ')
+            input('\nQUANTIDADE ADICIONADA ao Estoque!!!\nPressione qualquer tecla para voltar... ')
         case '7': # Execução da função retirar quantidade
             retirarQuantidade(insumos, 'ID')
-            input('\nQUANTIDADE RETIRADA do estoque!!!\nPressione qualquer tecla para voltar... ')
+            input('\nQUANTIDADE RETIRADA do Estoque!!!\nPressione qualquer tecla para voltar... ')
         case '8': # Execução da função reabastecer
             reabastecerEstoque(insumos)
-            input('\nREABASTECIMENTO realizado!!!\nPressione qualquer tecla para voltar... ')
+            input('\nREABASTECIMENTO Realizado!!!\nPressione qualquer tecla para voltar... ')
         case '9': # Execução da função relatorio final
             relatorioFinal()
-            input("\nRELATÓRIO gerado!!!\nPressione qualquer tecla para voltar... ")
+            input("\nRelatório GERADO!!!\nPressione qualquer tecla para voltar... ")
         case '0': # Saida do sistema
             print('\n > SISTEMA FECHADO... \n')
             break
