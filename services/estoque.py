@@ -107,8 +107,10 @@ def retirarQuantidade(dic, chave):
 # Função que lista os itens de um dicionario filtrando pela quantidade
 def listarQuantidade(dic):
     insumos_ordenados = {key: lista.copy() for key, lista in dic.items()}
-    selectionSort(insumos_ordenados['Estoque'])
-    indices_ordenados = range(len(insumos_ordenados['Estoque']))
+    # Cria pares (estoque, indice) para preservar o vinculo com as demais colunas
+    estoque_com_indices = list(zip(insumos_ordenados['Estoque'], range(len(insumos_ordenados['Estoque']))))
+    estoque_ordenado = quickSort(estoque_com_indices)
+    indices_ordenados = [indice for _, indice in estoque_ordenado]
     for key in insumos_ordenados:
         insumos_ordenados[key] = [insumos_ordenados[key][i] for i in indices_ordenados]
     visualizarTabela(insumos_ordenados)
