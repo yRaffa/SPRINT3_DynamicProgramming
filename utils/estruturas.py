@@ -1,6 +1,7 @@
 ### Imports ###
-from collections import deque
+from collections import deque, Counter
 import pandas as pd
+from datetime import datetime, timedelta
 
 # Estruturas globais
 consumo_fila = deque()
@@ -33,3 +34,21 @@ def visualizarPilha():
         print(df.to_string(index = False))
     else:
         print('NENHUM CONSUMO REGISTRADO!!!')
+
+def _hoje_str():
+    return datetime.now().strftime("%Y-%m-%d")
+
+def get_demanda_diaria(insumo_nome: str, dias: int):
+    cont = Counter()
+    for reg in consumo_fila:
+        if reg.get("Insumo") == insumo_nome:
+            dia = reg.get("Data", _hoje_str())
+            cont[dia] += reg.get("Quantidade", 0)
+
+    serie = []
+    base = datetime.now()
+    for k in range(dias-1, -1, -1):
+        d = (base - timedelta(days=k)).strftime("%Y-%m-%d")
+        serie.append(cont.get(d, 0))
+
+    return serie

@@ -1,8 +1,10 @@
 ### Imports ###
 from services.estoque import visualizarTabela, listarQuantidade
 from data.insumos import *
-from utils.estruturas import visualizarFila, visualizarPilha
+from utils.estruturas import visualizarFila, visualizarPilha, get_demanda_diaria
 from utils.ordenacoes import *
+from utils.dp import plano_otimo_reposicao
+import pandas as pd
 
 # Relatório Sprint 3
 def relatorioFinal():
@@ -18,3 +20,18 @@ def relatorioFinal():
     # Ordenações
     print("\n📊 Ordenação por Quantidade:")
     listarQuantidade(insumos)
+
+# Relatório Sprint 4 - DP
+# Gera plano ótimo de reposição via DP para um insumo específico, usando a série de demanda diária dos últimos 'dias'.
+def relatorioDP(id_insumo: int, dias: int = 7, K: float = 10.0, h: float = 0.1, p: float = 2.0):
+    try:
+        nome_insumo = insumos['Nome_Insumo'][id_insumo]
+        S0 = insumos['Estoque'][id_insumo]
+    except (IndexError, KeyError):
+        print("\n❌ ID inválido. Verifique a lista de insumos e tente novamente.")
+        return
+
+    demanda = get_demanda_diaria(nome_insumo, dias)
+    custo, df = plano_otimo_reposicao(demanda=demanda, K=K, h=h, p=p, estoque_inicial=S0)
+    print(df[['Dia','Demanda','Estoque_Inicial','Reposicao','Estoque_Final','Custo_Dia','Custo_Acumulado']].to_string(index=False))
+    print(f"\nCUSTO TOTAL: R$ {custo:.2f}")

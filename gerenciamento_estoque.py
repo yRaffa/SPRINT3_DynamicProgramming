@@ -1,12 +1,13 @@
 ### Imports ###
 from data.insumos import *
+from data.testes import *
 from services.estoque import *
 from services.relatorios import *
 from utils.estruturas import *
 from utils.inputs import inputOpcoes
 
 # Opções disponíveis no menu principal
-opcoes_menu = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+opcoes_menu = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 while True: # Laço principal do sistema com menu de navegação
     print('\n======================================================'
@@ -23,6 +24,8 @@ while True: # Laço principal do sistema com menu de navegação
 
           '8 - REABASTECER insumos no estoque \n'
           '9 - GERAR relatório de consumo\n\n'
+
+          '10 - GERAR plano ótimo de reposição (últimos 7 dias)\n\n'
 
           '0 - SAIR do sistema\n'
           '======================================================')
@@ -58,6 +61,10 @@ while True: # Laço principal do sistema com menu de navegação
         case '9': # Execução da função relatorio final
             relatorioFinal()
             input("\nRelatório GERADO!!!\nPressione qualquer tecla para voltar... ")
+        case '10': # Execução da função relatorio DP
+            gerar_consumos_semana()
+            testar_planos_dp()
+            input("\nPressione qualquer tecla para voltar... ")
         case '0': # Saida do sistema
             print('\n > SISTEMA FECHADO... \n')
             break
