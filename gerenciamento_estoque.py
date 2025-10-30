@@ -62,8 +62,8 @@ while True: # Laço principal do sistema com menu de navegação
             relatorioFinal()
             input("\nRelatório GERADO!!!\nPressione qualquer tecla para voltar... ")
         case '10': # Execução da função relatorio DP
-            gerar_consumos_semana()
-            testar_planos_dp()
+            consumoSemanal()
+            planosReposicao()
             input("\nPlano Ótimo de Reposição GERADO!!!\nPressione qualquer tecla para voltar... ")
         case '0': # Saida do sistema
             print('\n > SISTEMA FECHADO... \n')

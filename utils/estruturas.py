@@ -35,14 +35,14 @@ def visualizarPilha():
     else:
         print('NENHUM CONSUMO REGISTRADO!!!')
 
-def _hoje_str():
+def strData():
     return datetime.now().strftime("%Y-%m-%d")
 
-def get_demanda_diaria(insumo_nome: str, dias: int):
+def demandaDiaria(insumo_nome: str, dias: int):
     cont = Counter()
     for reg in consumo_fila:
         if reg.get("Insumo") == insumo_nome:
-            dia = reg.get("Data", _hoje_str())
+            dia = reg.get("Data", strData())
             cont[dia] += reg.get("Quantidade", 0)
 
     serie = []

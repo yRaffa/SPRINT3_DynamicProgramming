@@ -1,12 +1,12 @@
 ## Imports ###
-from utils.estruturas import registrarConsumo, consumo_fila, consumo_pilha, _hoje_str
+from utils.estruturas import *
 from data.insumos import insumos
 from services.relatorios import relatorioDP
 from datetime import datetime, timedelta
 import random
 
 # Gera e registra 7 dias de consumo fictício para cada insumo do dicionário. Os valores simulam consumo diário coerente com o estoque.
-def gerar_consumos_semana():
+def consumoSemanal():
     print("\nGERANDO DADOS DE CONSUMO DA ÚLTIMA SEMANA...\n")
 
     consumo_fila.clear()
@@ -31,7 +31,7 @@ def gerar_consumos_semana():
     print(f"✅ Foram registrados consumos de 7 dias para {len(insumos['Nome_Insumo'])} insumos.\n")
 
 # Executa o plano ótimo de reposição para todos os insumos com os dados simulados.
-def testar_planos_dp():
+def planosReposicao():
     print("PLANO DE REPOSIÇÃO PARA CADA INSUMO NOS ÚLTIMOS 7 DIAS:")
 
     for i, nome in enumerate(insumos['Nome_Insumo']):
